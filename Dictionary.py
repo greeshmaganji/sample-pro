@@ -1,7 +1,10 @@
 import openai
 import gradio
+import os
+from dotenv import load_dotenv
+load_dotenv()
 
-openai.api_key = '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'
+openai.api_key = os.getenv("openai.api_key")
 
 messages = [{"role": "system", "content": "You are a dictionary, provide meaning when a word is prompted"}]
 

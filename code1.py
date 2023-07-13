@@ -1,7 +1,15 @@
 #Directly importing Chat-GPT 3.5
 
 import openai
-openai.api_key = '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'
+import os
+from dotenv import load_dotenv
+
+
+load_dotenv()
+
+openai.api_key = os.getenv("openai.api_key")
+
+
 messages = [
     {"role": "system", "content": "You are a kind helpful assistant."},
 ]

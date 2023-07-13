@@ -3,7 +3,12 @@
 import openai
 import requests
 
-openai.api_key = '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'
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
+
+openai.api_key = os.getenv("openai.api_key")
 
 URL = "https://api.openai.com/v1/chat/completions"
 
